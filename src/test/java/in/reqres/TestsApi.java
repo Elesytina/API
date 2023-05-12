@@ -41,7 +41,7 @@ public class TestsApi {
         List<String> distinctFiles = files.stream().distinct().collect(Collectors.toList());
         System.out.println(distinctFiles);
         deleteSpec();
-        Assert.assertEquals(files.size(), distinctFiles.size(), "Имена файлов аватаров пользователей " +
+        Assert.assertEquals(files.size(), distinctFiles.size(), "Имена файлов аватаров  пользователей " +
                 "не уникальны");
     }
 
