@@ -9,7 +9,7 @@ import io.restassured.specification.ResponseSpecification;
 /**
  * @author Сытина Елена
  */
-public class Specification {
+public class  Specification {
     /**
      * Метод определяет спецификацию запроса
      *
