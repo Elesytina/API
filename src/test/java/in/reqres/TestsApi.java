@@ -1,8 +1,11 @@
 package in.reqres;
 
+import com.beust.jcommander.Parameter;
 import data.*;
+import io.restassured.http.ContentType;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import java.util.List;
@@ -23,8 +26,8 @@ public class TestsApi {
      *
      * @param baseUrl параметр String для отделения базового URL-адреса и получения имени файла
      */
-
-    @Test(dataProvider = "baseUrl")
+    @Parameters("baseUrl")
+    @Test(description = "Проверка уникальности имён файлов аватаров")
     public void getUsersListAndCheckUniqueFilesTest(String baseUrl) {
         installSpec(requestSpec(), responseSpec());
         Resource resource = given()
@@ -52,7 +55,8 @@ public class TestsApi {
      * @param password параметр типа String передаёт пароль
      * @param token    параметр типа String передаёт токен
      */
-    @Test(dataProvider = "dataForSuccessLogin")
+    @Parameters({"email", "password", "token"})
+    @Test(description = "успешная авторизация")
     public void loginSuccessTest(String email, String password, String token) {
         DataAuthorisation data = new DataAuthorisation(email,
                 password);
@@ -70,12 +74,33 @@ public class TestsApi {
                 "получили токен " + tokenResponse.getToken());
     }
 
+    @Parameters({"email", "password", "token"})
+    @Test
+    public void loginTest(String email, String password, String token) {
+        DataAuthorisation data = new DataAuthorisation(email,
+                password);
+        installSpec(requestSpec(), responseSpec());
+        Token tokenResponse = given()
+                .body(data)
+                .when()
+                .post("/api/login")
+                .then()
+                .log().body()
+                .extract().response()
+                .as(Token.class);
+        deleteSpec();
+        Assert.assertEquals(tokenResponse.getToken(), token, "Ожидали токен " + token +
+                "получили токен " + tokenResponse.getToken());
+    }
+
+
     /**
      * Задание 2.2 Проверка на логин с ошибкой из-за не ведённого пароля
      *
      * @param mail тип String для передачи в метод значения email-адреса
      */
-    @Test(dataProvider = "dataForUnsuccessfulLogin")
+    @Parameters({"mail","error"})
+    @Test
     public void loginUnsuccessfulTest(String mail, String error) {
         EmailData emailData = new EmailData(mail);
         ErrorData errorData = given()
@@ -110,6 +135,7 @@ public class TestsApi {
         Assert.assertEquals(list, listSorted, " Данные не отсортированы по годам: " + list);
     }
 
+
     /**
      * DataProvider для теста {@link #loginSuccessTest(String, String, String)}
      *
@@ -121,6 +147,7 @@ public class TestsApi {
                 {"eve.holt@reqres.in", "cityslicka", "QpwL5tke4Pnpja7X4"},
         };
     }
+
     /**
      * DataProvider для теста {@link #loginUnsuccessfulTest(String, String)}
      *
@@ -131,6 +158,7 @@ public class TestsApi {
     public Object[][] getDataForUnsuccessfulLogin() {
         return new Object[][]{{"peter@klaven", "Missing password"}};
     }
+
     /**
      * DataProvider для теста {@link #getUsersListAndCheckUniqueFilesTest(String)}
      *
@@ -141,6 +169,7 @@ public class TestsApi {
     public Object[][] getBaseUrl() {
         return new Object[][]{{"https://reqres.in/img/faces/"}};
     }
+
 
 }
 

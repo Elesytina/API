@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Suite" parallel="none">
+    <test name="Test">
+        <parameter name = "email" value="eve.holt@reqres.in"/>
+        <parameter name = "password" value="cityslicka"/>
+        <parameter name = "token" value = "QpwL5tke4Pnpja7X4"/>
+        <parameter name="baseUrl" value="https://reqres.in/img/faces/"/>
+        <parameter name="mail" value="peter@klaven"/>
+        <parameter name="error" value="Missing password"/>
+        <classes>
+            <class name="in.reqres.TestsApi">
+            </class>
+        </classes>
+    </test>
+</suite> <!-- Suite -->

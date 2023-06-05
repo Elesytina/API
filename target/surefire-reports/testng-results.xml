@@ -2,12 +2,12 @@
 <testng-results ignored="0" total="5" passed="5" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-04-29T08:30:07Z" name="Command line suite" finished-at="2023-04-29T08:30:16Z" duration-ms="8358">
+  <suite started-at="2023-06-04T11:58:12Z" name="Command line suite" finished-at="2023-06-04T11:58:15Z" duration-ms="2584">
     <groups>
     </groups>
-    <test started-at="2023-04-29T08:30:07Z" name="Command line test" finished-at="2023-04-29T08:30:16Z" duration-ms="8358">
+    <test started-at="2023-06-04T11:58:12Z" name="Command line test" finished-at="2023-06-04T11:58:15Z" duration-ms="2584">
       <class name="com.autodns.Tests">
-        <test-method signature="checkCountOfTagsTest(int)[pri:0, instance:com.autodns.Tests@6cf0e0ba]" started-at="2023-04-29T08:30:07Z" name="checkCountOfTagsTest" data-provider="number" finished-at="2023-04-29T08:30:11Z" duration-ms="4018" status="PASS">
+        <test-method signature="checkCountOfTagsTest(int)[pri:0, instance:com.autodns.Tests@1283bb96]" started-at="2023-06-04T11:58:12Z" name="checkCountOfTagsTest" data-provider="number" finished-at="2023-06-04T11:58:14Z" duration-ms="1583" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -20,7 +20,7 @@
         </test-method> <!-- checkCountOfTagsTest -->
       </class> <!-- com.autodns.Tests -->
       <class name="in.reqres.TestsApi">
-        <test-method signature="getUsersListAndCheckUniqueFilesTest(java.lang.String)[pri:0, instance:in.reqres.TestsApi@7d8995e]" started-at="2023-04-29T08:30:11Z" name="getUsersListAndCheckUniqueFilesTest" data-provider="baseUrl" finished-at="2023-04-29T08:30:13Z" duration-ms="1428" status="PASS">
+        <test-method signature="getUsersListAndCheckUniqueFilesTest(java.lang.String)[pri:0, instance:in.reqres.TestsApi@74f0ea28]" started-at="2023-06-04T11:58:14Z" name="getUsersListAndCheckUniqueFilesTest" data-provider="baseUrl" finished-at="2023-06-04T11:58:14Z" duration-ms="288" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -31,11 +31,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- getUsersListAndCheckUniqueFilesTest -->
-        <test-method signature="listResourcesSortedTest()[pri:0, instance:in.reqres.TestsApi@7d8995e]" started-at="2023-04-29T08:30:13Z" name="listResourcesSortedTest" finished-at="2023-04-29T08:30:14Z" duration-ms="1067" status="PASS">
+        <test-method signature="listResourcesSortedTest()[pri:0, instance:in.reqres.TestsApi@74f0ea28]" started-at="2023-06-04T11:58:14Z" name="listResourcesSortedTest" finished-at="2023-06-04T11:58:14Z" duration-ms="118" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- listResourcesSortedTest -->
-        <test-method signature="loginSuccessTest(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:in.reqres.TestsApi@7d8995e]" started-at="2023-04-29T08:30:14Z" name="loginSuccessTest" data-provider="dataForSuccessLogin" finished-at="2023-04-29T08:30:15Z" duration-ms="919" status="PASS">
+        <test-method signature="loginSuccessTest(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:in.reqres.TestsApi@74f0ea28]" started-at="2023-06-04T11:58:14Z" name="loginSuccessTest" data-provider="dataForSuccessLogin" finished-at="2023-06-04T11:58:14Z" duration-ms="268" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -56,7 +56,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loginSuccessTest -->
-        <test-method signature="loginUnsuccessfulTest(java.lang.String, java.lang.String)[pri:0, instance:in.reqres.TestsApi@7d8995e]" started-at="2023-04-29T08:30:15Z" name="loginUnsuccessfulTest" data-provider="dataForUnsuccessfulLogin" finished-at="2023-04-29T08:30:16Z" duration-ms="812" status="PASS">
+        <test-method signature="loginUnsuccessfulTest(java.lang.String, java.lang.String)[pri:0, instance:in.reqres.TestsApi@74f0ea28]" started-at="2023-06-04T11:58:14Z" name="loginUnsuccessfulTest" data-provider="dataForUnsuccessfulLogin" finished-at="2023-06-04T11:58:15Z" duration-ms="257" status="PASS">
           <params>
             <param index="0">
               <value>
